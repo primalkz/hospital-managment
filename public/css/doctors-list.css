@@ -1,0 +1,154 @@
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Search Bar */
+.search-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-container .form-control {
+  height: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-container .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Table Styles */
+.doctors-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.doctors-table thead th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+.doctors-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.doctors-table tbody tr:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+/* Form Switch Styling */
+.form-check-input {
+  width: 3rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+/* Badge Styling */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Action Buttons */
+.btn-light {
+  background-color: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.btn-light:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Stat Cards */
+.stat-card {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.stat-card-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: #6366f1;
+  border-color: #e5e7eb;
+  padding: 0.5rem 0.75rem;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.pagination .page-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .doctors-table {
+    font-size: 0.9rem;
+  }
+  
+  .form-check-input {
+    width: 2.5rem;
+    height: 1.25rem;
+  }
+  
+  .badge {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .doctors-table th:nth-child(3),
+  .doctors-table td:nth-child(3) {
+    display: none;
+  }
+  
+  .doctors-table th:nth-child(5),
+  .doctors-table td:nth-child(5) {
+    display: none;
+  }
+}
+
+/* Star Rating */
+.bi-star-fill, .bi-star {
+  font-size: 0.8rem;
+}
