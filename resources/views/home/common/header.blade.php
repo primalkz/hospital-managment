@@ -38,6 +38,7 @@
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
         </form>
+        <a href="/register" class="btn btn-sm btn-outline-primary ms-2 my-2">Register</a>
         <a href="/login" class="btn btn-sm btn-outline-primary ms-2 my-2">Login</a>
         <a href="/dashboard" class="btn btn-sm btn-primary ms-2 my-2">Dashboard</a>
       </div>
