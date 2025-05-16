@@ -17,7 +17,7 @@
       <form class="appointment-form" method="POST" action="{{ route('appointment.store') }}">
         @csrf
         <!-- Step 1: Patient Information -->
-        <div class="form-step active p-2" id="step1">
+        <div class="form-step active" id="step1">
           <div class="card border-0 rounded-lg mb-4" style="background-color:rgba(150, 183, 255, 0.6)">
           <div class="card-body p-3">
             <h6 class="card-title d-flex align-items-center mb-3">
@@ -125,7 +125,7 @@
           </div>
         </div>
         <!-- Step 2: Department & Doctor Selection -->
-        <div class="form-step p-2" id="step2">
+        <div class="form-step " id="step2">
           <div class="card border-0 rounded-lg mb-4" style="background-color:rgba(150, 183, 255, 0.6)">
             <div class="card-body p-3">
               <h6 class="card-title d-flex align-items-center mb-3">
@@ -197,7 +197,7 @@
         </div>
         
         <!-- Step 3: Date & Time Selection -->
-        <div class="form-step p-2" id="step3">
+        <div class="form-step " id="step3">
           <div class="card border-0 rounded-lg mb-4" style="background-color:rgba(150, 183, 255, 0.6)">
             <div class="card-body p-3">
               <h6 class="card-title d-flex align-items-center mb-3">

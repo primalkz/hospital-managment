@@ -170,7 +170,7 @@ class AdminController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'mobile' => 'required|string|max:12',
+            'mobile' => 'required|string|max:12|unique:users',
             'address' => 'required|string',
             'city' => 'required|string',
             'zip_code' => 'required|string',
