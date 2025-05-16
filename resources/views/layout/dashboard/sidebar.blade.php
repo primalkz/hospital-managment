@@ -15,20 +15,18 @@
           <span class="sidebar-icon"><i class="bi bi-grid-1x2-fill"></i></span>
           <span class="sidebar-text">Dashboard</span>
         </a>
-      </div>
-
-      @if(Auth::user()->type != 'patient' )
+      </div>      @if(Auth::user()->type != 'patient' )
       <div class="sidebar-item">
-        <a href="" class="sidebar-link">
+        <a href="{{ route('admin.patients') }}" class="sidebar-link {{ $route == 'patients' ? 'active' : '' }}">
           <span class="sidebar-icon"><i class="bi bi-people-fill"></i></span>
           <span class="sidebar-text">Patients</span>
         </a>
       </div>
       @endif
 
-      @if(Auth::user()->type != 'doctor' || Auth::user()->type != 'patient' )
+      @if(Auth::user()->type != 'doctor' && Auth::user()->type != 'patient' )
       <div class="sidebar-item">
-        <a href="{{ route('admin.doctors-list') }}" class="sidebar-link">
+        <a href="{{ route('admin.doctors') }}" class="sidebar-link {{ $route == 'doctors' ? 'active' : '' }}">
           <span class="sidebar-icon"><i class="bi bi-clipboard2-pulse-fill"></i></span>
           <span class="sidebar-text">Doctors</span>
         </a>
@@ -40,35 +38,22 @@
           <span class="sidebar-icon"><i class="bi bi-calendar-check-fill"></i></span>
           <span class="sidebar-text">Appointment</span>
         </a>
-      </div>
-      <div class="sidebar-item">
-        <a href="#" class="sidebar-link">
-          <span class="sidebar-icon"><i class="bi bi-door-open-fill"></i></span>
-          <span class="sidebar-text">Bedroom</span>
-        </a>
-      </div>
-      <div class="sidebar-item">
-        <a href="#" class="sidebar-link">
-          <span class="sidebar-icon"><i class="bi bi-file-earmark-medical-fill"></i></span>
-          <span class="sidebar-text">Lab Reports</span>
-        </a>
-      </div>
-      <div class="sidebar-item">
-        <a href="#" class="sidebar-link">
+      </div>      <div class="sidebar-item">
+        <a href="{{ route('dashboard.transactions') }}" class="sidebar-link {{ $route == 'transactions' ? 'active' : '' }}">
           <span class="sidebar-icon"><i class="bi bi-cash-stack"></i></span>
-          <span class="sidebar-text">Transaction</span>
+          <span class="sidebar-text">Transactions</span>
         </a>
       </div>
       @if(Auth::user()->type == 'admin' )
       <div class="sidebar-item">
-        <a href="#" class="sidebar-link">
+        <a href="{{ route('admin.add') }}" class="sidebar-link {{ $route == 'add' ? 'active' : '' }}">
           <span class="sidebar-icon"><i class="bi bi-person-plus-fill"></i></span>
           <span class="sidebar-text">Add Admin</span>
         </a>
       </div>
       @endif
       <div class="sidebar-item">
-        <a href="#" class="sidebar-link">
+        <a href="{{ route('profile') }}" class="sidebar-link {{ $route == 'profile' ? 'active' : '' }}">
           <span class="sidebar-icon"><i class="bi bi-gear-fill"></i></span>
           <span class="sidebar-text">Settings</span>
         </a>
