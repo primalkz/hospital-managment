@@ -8,6 +8,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,12 @@ Route::middleware(Authenticate::class)->group(function() {
     Route::get('/appointment/check-availability', [AppointmentController::class, 'checkAvailability'])->name('appointment.check-availability');
     Route::get('/transactions', [TransactionController::class, 'index'])->name('dashboard.transactions');
     Route::post('/transaction/pay', [TransactionController::class, 'processPayment'])->name('transaction.pay');
+
+    // Reports routes
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('/reports/create/{appointment}', [ReportController::class, 'create'])->name('reports.create');
+    Route::post('/reports/store', [ReportController::class, 'store'])->name('reports.store');
+    Route::get('/reports/download/{id}', [ReportController::class, 'downloadPdf'])->name('reports.download');
 });
 
 // Admin only routes

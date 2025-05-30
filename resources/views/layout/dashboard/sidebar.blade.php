@@ -44,6 +44,12 @@
           <span class="sidebar-text">Transactions</span>
         </a>
       </div>
+      <div class="sidebar-item">
+        <a href="{{ route('reports.index') }}" class="sidebar-link {{ $route == 'reports' ? 'active' : '' }}">
+          <span class="sidebar-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <span class="sidebar-text">Reports</span>
+        </a>
+      </div>
       @if(Auth::user()->type == 'admin' )
       <div class="sidebar-item">
         <a href="{{ route('admin.add') }}" class="sidebar-link {{ $route == 'add' ? 'active' : '' }}">

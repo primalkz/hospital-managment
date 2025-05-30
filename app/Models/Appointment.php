@@ -41,4 +41,9 @@ class Appointment extends Model
     {
         return $this->hasOne(Transaction::class);
     }
+
+    public function report()
+    {
+        return $this->hasOne(Report::class);
+    }
 }

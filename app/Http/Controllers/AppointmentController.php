@@ -88,7 +88,7 @@ class AppointmentController extends Controller
         Transaction::create([
             'appointment_id' => $appointment->id,
             'patient_id' => $patient_id,
-            'amount' => 100.00, // You may want to make this configurable based on department/doctor
+            'amount' => 100.00, 
             'payment_method' => 'pending',
             'status' => 'pending',
             'transaction_id' => 'TXN-' . str_pad($appointment->id, 6, '0', STR_PAD_LEFT)
@@ -110,6 +110,13 @@ class AppointmentController extends Controller
             'reason' => 'required|string',
             'notes' => 'nullable|string'
         ]);
+
+        // If status is being set to completed, redirect to report creation form
+        if ($validated['status'] === 'completed') {
+            // Save other changes except status
+            $appointment->update(array_merge($validated, ['status' => $appointment->status]));
+            return redirect()->route('reports.create', ['appointment' => $appointment->id]);
+        }
 
         $appointment->update($validated);
 

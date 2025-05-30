@@ -163,16 +163,16 @@
                         </button>
                         @endif
 
-                        @if ($appointment->status != 'cancelled')
+                        @if ($appointment->status != 'cancelled' && $appointment->status != 'completed')
                         <button class="btn btn-sm btn-outline-danger" onclick="showCancelModal('{{ $appointment->id }}')">
                           <i class="bi bi-x-circle"></i> Cancel
                         </button>
                         @endif
 
                         @if ($appointment->status == 'completed')
-                        <button class="btn btn-sm btn-primary">
+                        <a href="{{ $appointment->report ? route('reports.download', $appointment->report->id) : '#' }}" class="btn btn-sm btn-primary" @if(!$appointment->report) disabled @endif>
                           <i class="bi bi-file-text"></i> View Report
-                        </button>
+                        </a>
                         @endif
                       </div>
                     </div>
